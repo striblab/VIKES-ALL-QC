@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher, onMount } from 'svelte';
   const DATA_URL =
-    'https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/data.json';
+    'https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/data-v2.json';
   let items = [];
   let loading = true;
   let error = '';

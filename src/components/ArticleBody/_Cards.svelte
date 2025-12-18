@@ -30,45 +30,25 @@
     if (group === 'Defense') return 'defense';
     return 'specialteams';
   }
-
-  // manage the flip state
-
-  const isTouch =
-    typeof window !== 'undefined' &&
-    ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-
-  let flippedId = null;
-
-  function onEnter(id) {
-    if (!isTouch) flippedId = id;
-  }
-
-  function onLeave(id) {
-    if (!isTouch && flippedId === id) flippedId = null;
-  }
-
-  function onTap(id) {
-    if (!isTouch) return;
-    flippedId = flippedId === id ? null : id;
-  }
 </script>
 
 <div
   class="card-list max-w-[1800px] flex flex-row flex-wrap p-0 m-auto justify-center"
 >
-  {#each items as item, i (i)}
-    {#if item.winner}
-      <div
-        class="card card-{items.indexOf(item) + 1} {getGroupClass(
-          item.group,
-        )} cursor-pointer p-0 pb-8 aspect-[1750/2457] bg-transparent perspective-[1000px]"
-        class:flip={flippedId === i}
-        on:mouseenter={() => onEnter(i)}
-        on:mouseleave={() => onLeave(i)}
-        on:click={() => onTap(i)}
-      >
-        <div class="poslabel">{item.position}</div>
-        <div class="card-content relative w-full h-full">
+  {#each items as item}
+  {#if item.winner}
+    <div
+      class="card card-{items.indexOf(item) + 1} {getGroupClass(
+        item.group,
+      )} cursor-pointer p-0 pb-8 aspect-[1750/2457] bg-transparent perspective-[1000px]"
+    >
+      <div class="poslabel">{item.position}</div>
+      <div class="card-content relative w-full h-full">
+        <div
+          class="card-front absolute w-full h-full bg-no-repeat bg-cover bg-center p-0"
+          style="background-image:url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/img/{item.image_url}');"
+        ></div>
+        <div class="card-back absolute w-full h-full">
           <div
             class="cardback-content relative aspect-[1750/2457] bg-cover w-full h-full bg-[url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/img/cardback.png')]"
           >
@@ -91,6 +71,7 @@
           </div>
         </div>
       </div>
+    </div>
     {/if}
   {/each}
 </div>

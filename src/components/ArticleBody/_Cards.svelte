@@ -33,18 +33,18 @@
 </script>
 
 <div
-  class="card-list max-w-[1500px] flex flex-row flex-wrap p-0 m-auto justify-center"
+  class="card-list max-w-[1800px] flex flex-row flex-wrap p-0 m-auto justify-center"
 >
   {#each items as item}
     <div
       class="card card-{items.indexOf(item) + 1} {getGroupClass(
         item.group,
-      )} cursor-pointer p-0 pb-8 aspect-[1750/2457] min-w-[20vw] bg-transparent perspective-[1000px]"
+      )} cursor-pointer p-0 pb-8 aspect-[1750/2457] bg-transparent perspective-[1000px]"
     >
       <div class="poslabel">{item.position}</div>
       <div class="card-content relative w-full h-full">
         <div
-          class="card-front absolute w-full h-full bg-no-repeat bg-contain bg-center p-0"
+          class="card-front absolute w-full h-full bg-no-repeat bg-cover bg-center p-0"
           style="background-image:url('https://static.startribune.com{item.image_url}');"
         ></div>
         <div class="card-back absolute w-full h-full">
@@ -52,18 +52,18 @@
             class="cardback-content relative aspect-[1750/2457] bg-cover w-full h-full bg-[url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/img/cardback.png')]"
           >
             <div class="card-header">
-              <div class="nameplate">{item.name}</div>
+              <div class="nameplate pt-2 pb-2">{item.name}</div>
               <div class="posinfo">
-                <span class="name">{item.position}</span>
-                <span class="jersey_num">{item.jersey_number}</span>
+                <span class="name" style="font-weight:bold; color: #4f2683">{item.position}</span>
+                <span class="jersey_num">#{item.jersey_number} &#8226; </span>
                 <span class="years">{item.years}</span>
               </div>
             </div>
-            <div class="blurb">
+            <div class="blurb pt-1 pb-8">
               <span class="blurb-text">{item.blurb}</span>
-              <span class="attrib">&mdash; {item.blurb_author}</span>
-              <span class="other_voters"
-                >Also recieving votes:<br />{@html item.other_votes}</span
+              <div class="attrib pt-1 pb-3">&mdash; <b>{item.blurb_author}</b></div>
+              <div class="other_voters"
+                >Also recieving votes:<br />{@html item.other_votes}</div
               >
             </div>
             <div class="fadedScroller_fade"></div>

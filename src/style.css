@@ -70,6 +70,8 @@
       padding-bottom: 25px;
       text-transform: uppercase;
       max-width: 575px;
+      letter-spacing: 1px;
+      padding: 3px;
   }
 
   .hero-ex {
@@ -121,7 +123,7 @@
   }
 
   .posinfo {
-      font-family: Graphik;
+      font-family: 'Graphik Semibold';
       font-size: 12px;
   }
 
@@ -162,6 +164,10 @@
 
   *::-webkit-scrollbar-corner {
       background: transparent;
+  }
+
+  .other_voters {
+    text-align: left !important;
   }
 
   .attrib {
@@ -253,17 +259,74 @@
   }
 
   .card-list .card {
-      width: 245px;
+    width: auto;
       cursor: pointer;
       padding: 0 10px 30px 10px;
       aspect-ratio: 1750 / 2457 !important;
   }
 
-  @media (max-width: 600px) {
-      .card-list .card {
-          width: 90%;
-      }
-  }
+
+  @media screen and (max-width: 1800px) {
+    .card-list .card {
+        min-width: 280px !important;
+        max-width: 280px !important;
+
+    }
+
+    .blurb {
+        max-height: 210px!important;
+        padding-top: 8px !important;
+    }
+
+    .posinfo {
+        font-size: 14px !important; 
+    }
+
+    .nameplate {
+        margin-top: 5px;
+    }
+
+}
+
+@media screen and (min-width: 1801px) {
+    .card-list .card {
+        min-width: 280px !important;
+        max-width: 280px !important;
+
+    }
+
+    .blurb {
+        max-height: 210px!important;
+        padding-top: 8px !important;
+    }
+
+    .posinfo {
+        font-size: 14px !important; 
+    }
+    .nameplate {
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .card-list .card {
+        min-width: 245px !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .card-list .card {
+        min-width: 245px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card-list .card {
+        min-width: 235px !important;
+        max-width: 400px !important;
+    }
+}
+
 
   .card-list .card .card-content {
       height: 100%;
@@ -316,21 +379,11 @@
   .leadertext {
       font-family: 'Graphik-Bold';
       text-transform: uppercase;
-      font-size: 36px;
+      font-size: 2rem;
       margin: auto;
       text-align: center;
       line-height: 110%;
       padding-bottom: 15px;
-  }
-
-  .toggler {
-      font-size: 16px;
-      text-align: center;
-      margin: auto;
-      font-family: 'Graphik';
-      padding-bottom: 25px;
-      text-transform: uppercase;
-      max-width: 575px;
   }
 
 
@@ -344,7 +397,7 @@
   .nameplate {
       font-family: 'Graphik';
       font-weight: bold;
-      font-size: 28px;
+      font-size: 26px;
       line-height: 90%;
   }
 
@@ -437,4 +490,6 @@
   }
   .active {
     font-weight: bold;
+    background-color: rgba(79, 38, 131, .7);
+    color: white;
   }

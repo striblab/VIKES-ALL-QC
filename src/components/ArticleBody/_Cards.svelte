@@ -46,7 +46,7 @@
       <div class="card-content relative w-full h-full">
         <div
           class="card-front absolute w-full h-full bg-no-repeat bg-cover bg-center p-0"
-          style="background-image:url('https://static.startribune.com{item.image_url}');"
+          style="background-image:url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/img/{item.image_url}');"
         ></div>
         <div class="card-back absolute w-full h-full">
           <div

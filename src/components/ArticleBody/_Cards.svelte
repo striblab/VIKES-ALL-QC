@@ -68,14 +68,6 @@
               </div>
               <div class="fadedScroller_fade"></div>
             </div>
-            <div class="blurb pt-1 pb-8">
-              <span class="blurb-text">{item.blurb}</span>
-              <div class="attrib pt-1 pb-3">&mdash; <b>{item.blurb_author}</b></div>
-              <div class="other_voters"
-                >Also recieving votes:<br />{@html item.other_votes}</div
-              >
-            </div>
-            <div class="fadedScroller_fade"></div>
           </div>
         </div>
       </div>

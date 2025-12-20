@@ -31,22 +31,18 @@
     return 'specialteams';
   }
 
-    // manage the flip state
+  // manage the flip state
 
   const isTouch =
     typeof window !== 'undefined' &&
     ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-
   let flippedId = null;
-
   function onEnter(id) {
     if (!isTouch) flippedId = id;
   }
-
   function onLeave(id) {
     if (!isTouch && flippedId === id) flippedId = null;
   }
-
   function onTap(id) {
     if (!isTouch) return;
     flippedId = flippedId === id ? null : id;
@@ -57,15 +53,25 @@
   class="card-list max-w-[1800px] flex flex-row flex-wrap p-0 m-auto justify-center"
 >
   {#each items as item, i (i)}
-  {#if item.winner}
-    <div
+    {#if item.winner}
+    <button
+        type="button"
         class="card card-{items.indexOf(item) + 1} {getGroupClass(
           item.group,
         )} cursor-pointer p-0 pb-8 aspect-[1750/2457] bg-transparent perspective-[1000px]"
         class:flip={flippedId === i}
+        aria-pressed={flippedId === i}
+        aria-label="Flip card for {item.name}"
         on:mouseenter={() => onEnter(i)}
         on:mouseleave={() => onLeave(i)}
         on:click={() => onTap(i)}
+        on:keydown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onTap(i);
+          }
+        }}
+        style="background:none; border:none; padding:0; text-align:inherit;"
       >
       <div class="poslabel">{item.position}</div>
       <div class="card-content relative w-full h-full">
@@ -96,7 +102,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </button>
     {/if}
   {/each}
 </div>

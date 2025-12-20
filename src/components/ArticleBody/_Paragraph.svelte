@@ -15,6 +15,6 @@ Wrap this component around the markup you want rendered.
   let { children } = $props();
 </script>
 
-<p class="font-editorial-body-reg-02 !font-[Graphik] text-text-primary">
+<p class="font-editorial-body-reg-02 text-text-primary">
   {@render children?.()}
 </p>

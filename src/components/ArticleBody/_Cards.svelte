@@ -74,9 +74,9 @@
           {item.position}
         </div>
         <div class="card-content relative w-full h-full">
-          <div title="Image of our {item.name} player card." class="card-front shadow-[10px_10px_20px_-5px_rgba(0,0,0,.5)] absolute w-full h-full p-0 bg-no-repeat bg-cover bg-center" style="background-image:url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/card-finals/{item.image_url}')"></div>
+          <div title="Image of our {item.name} player card." class="card-front shadow-[10px_10px_20px_-5px_rgba(0,0,0,.5)] absolute w-full h-full p-0 bg-no-repeat bg-cover bg-center" style="background-image:url('https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/card-finals/{item.image_url}?w=540')"></div>
           <div class="card-back shadow-[10px_10px_20px_-5px_rgba(0,0,0,.5)] absolute w-full h-full font-[Graphik-regular]">
-            <div class="cardback-content relative bg-cover w-full h-full bg-[url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/img/cardback-122125-2.png')]">
+            <div class="cardback-content relative bg-cover w-full h-full bg-[url('https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/cardback-122125-2.png?w=540')]">
               <div class="card-back-body pt-[9%] mx-auto h-full">
                 <div class="nameplate pb-[6px] text-center font-[Graphik-bold] text-[1.25rem] leading-[90%]">
                   {item.name}

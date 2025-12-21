@@ -27,8 +27,9 @@
 
 <Grid additionalClasses={'gap-y-0'}>
   <GridRow variant={'inline'} additionalClasses={'gap-y-5 pt-2 pb-6'}>
+    
     <Paragraph
-      >From no-brainer consensus picks to choosing three different quarterbacks
+      ><p class="drop-cap font-[publico-headline-black] float-left leading-none text-[76px] pr-2 relative -top-[2px] h-[50px]">F</p>rom no-brainer consensus picks to choosing three different quarterbacks
       and three different head coaches, the Minnesota Star Tribune’s Ben
       Goessling, Andrew Krammer and Mark Craig have used a combined half-century
       of experience covering the Vikings to assemble their versions of what the
@@ -146,7 +147,7 @@
     
     <!-- print the nav buttons -->
 
-    <div class="toggler pt-2 text-[1.15rem] text-center mx-auto font-[Graphik-regular] pb-2 letterspacing-[2px]">
+    <div class="toggler px-4 pt-2 text-[1rem] md:text-[1.15em] text-center mx-auto font-[Graphik-regular] pb-2 letterspacing-[2px]">
       {#each groups as g}
         <button
           type="button"
@@ -164,7 +165,14 @@
     </div>
   </GridRow>
 </Grid>
-
+<Grid additionalClasses={'gap-y-0'}>
+  <GridRow variant={'inline'} additionalClasses={'gap-y-5 pt-8'}>
+    <div class="credits text-center mb-8 rt-Box font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU mt-[6px] px-4">
+      <p class="pb-[3px]"><span class="font-[Graphik-semibold]">Design and development:</span> Joe Rull and Jamie Hutt</p>
+      <p><span class="font-[Graphik-semibold]">Editing:</span> Naila-Jean Meyers and Kenneth Chia</p>
+</div>
+  </GridRow>
+</Grid>
 <!-- 
 @component
 ### ArticleBody component

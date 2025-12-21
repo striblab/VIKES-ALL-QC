@@ -49,14 +49,14 @@
   }
 </script>
 
-<div class="my-8 card-list max-w-[1800px] gap-9 flex flex-row flex-wrap py-0 px-4 mx-auto justify-center">
+<div class="my-8 card-list max-w-[1800px] gap-9 flex flex-row flex-wrap px-4 mx-auto justify-center">
   {#each items as item, i (i)}
     {#if item.winner}
       <button
           type="button"
-          class="card w-[270px] bg-none p-0 text-left border-0 card-{items.indexOf(item) + 1} {getGroupClass(
+          class="card w-[270px] h-[379px] relative mt-8 bg-none p-0 text-left border-0 card-{items.indexOf(item) + 1} {getGroupClass(
             item.group,
-          )} cursor-pointer aspect-[1750/2457] perspective-[1000px]"
+          )} cursor-pointer perspective-[1000px]"
           class:flip={flippedId === i}
           aria-pressed={flippedId === i}
           aria-label="Flip card for {item.name}"
@@ -70,13 +70,13 @@
             }
           }}
       >
-        <div class="text-center font-[Graphik-semibold] text-[1rem] pb-2">
+        <div class="text-center absolute -top-[30px] w-full text-center font-[Graphik-semibold] text-[1rem] pb-2">
           {item.position}
         </div>
         <div class="card-content relative w-full h-full">
-          <div class="card-front shadow-[10px_10px_20px_-5px_rgba(0,0,0,.5)] absolute w-full h-full p-0 bg-no-repeat bg-cover bg-center" style="background-image:url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/card-finals/{item.image_url}')"></div>
+          <div title="Image of our {item.name} player card." class="card-front shadow-[10px_10px_20px_-5px_rgba(0,0,0,.5)] absolute w-full h-full p-0 bg-no-repeat bg-cover bg-center" style="background-image:url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/card-finals/{item.image_url}')"></div>
           <div class="card-back shadow-[10px_10px_20px_-5px_rgba(0,0,0,.5)] absolute w-full h-full font-[Graphik-regular]">
-            <div class="cardback-content relative aspect-[1750/2457] bg-cover w-full h-full bg-[url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/img/cardback-122125-2.png')]">
+            <div class="cardback-content relative bg-cover w-full h-full bg-[url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/img/cardback-122125-2.png')]">
               <div class="card-back-body pt-[9%] mx-auto h-full">
                 <div class="nameplate pb-[6px] text-center font-[Graphik-bold] text-[1.25rem] leading-[90%]">
                   {item.name}
@@ -108,5 +108,4 @@
     {/if}
   {/each}
 </div>
-
 <style></style>

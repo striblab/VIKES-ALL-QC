@@ -50,15 +50,15 @@
 </script>
 
 <div
-  class="card-list max-w-[1800px] flex flex-row flex-wrap p-0 m-auto justify-center"
+  class="bg-[yellow] my-8 card-list max-w-[1800px] gap-5 flex flex-row flex-wrap p-0 mx-auto justify-center"
 >
   {#each items as item, i (i)}
     {#if item.winner}
     <button
         type="button"
-        class="card card-{items.indexOf(item) + 1} {getGroupClass(
+        class="card !bg-[red] card-{items.indexOf(item) + 1} {getGroupClass(
           item.group,
-        )} cursor-pointer p-0 pb-8 aspect-[1750/2457] bg-transparent perspective-[1000px]"
+        )} cursor-pointer p-0 pb-8 aspect-[1750/2457] perspective-[1000px]"
         class:flip={flippedId === i}
         aria-pressed={flippedId === i}
         aria-label="Flip card for {item.name}"
@@ -73,20 +73,21 @@
         }}
         style="background:none; border:none; padding:0; text-align:inherit;"
       >
-      <div class="poslabel">{item.position}</div>
+      <div class="text-center font-[Graphik-semibold] text-[1rem] pb-2">{item.position}</div>
       <div class="card-content relative w-full h-full">
         <div
           class="card-front absolute w-full h-full bg-no-repeat bg-cover bg-center p-0"
           style="background-image:url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/card-finals/{item.image_url}');"
         ></div>
-        <div class="card-back absolute w-full h-full">
+        <div class="card-back absolute w-full h-full font-[Graphik-regular]">
           <div
             class="cardback-content relative aspect-[1750/2457] bg-cover w-full h-full bg-[url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/img/cardback.png')]"
           >
-            <div class="card-header">
-              <div class="nameplate pb-2">{item.name}</div>
+            <div class="card-header text-center pt-[11%] mx-auto h-full bg-[pink] opacity-[50%]">
+
+              <div class="nameplate pb-2 font-[Graphik-bold] text-[1.25rem] leading-[90%]">{item.name}</div>
               <div class="posinfo pb-1">
-                <span class="name" style="font-weight:bold; color: #4f2683">{item.position}</span>
+                <span class="name font-[Graphik-semibold] text-[#4f2683]">{item.position}</span>
                 <span class="jersey_num">#{item.jersey_number} &#8226; </span>
                 <span class="years">{item.years}</span>
               </div>

@@ -56,6 +56,24 @@
       safeties and three corners, one of them a nickel back.</Paragraph
     >
 
+  </GridRow>
+
+  <GridRow variant={'fullBleed'}>
+    <!-- writer's video placeholder -->
+
+    <link rel="stylesheet" href="https://static.startribune.com/news/tools/embeds/video-player/css/video-iframe_070125.css">
+    <div class="video-embed default" style="max-width:1080px;margin: 0 auto 0 auto;">
+      <div class="video-inner">
+        <iframe title="Sports writers discuss their Quarter Century votes" src="https://static.startribune.com/news/tools/embeds/video-player/player-no-ads.html?url=https://d2rhwptr68oefh.cloudfront.net/wp-startribunemedia/20251202/692f4e62f765941d304dc8a6/t_d161c1c8035e457b9a04162facb37ea5_name_op_hts_thermostat_video_embed/file_1920x1080-5400-v4.mp4&amp;shape=default&amp;thumbnail=https://arc-goldfish-startribunemedia-thumbnails.s3.amazonaws.com/12-02-2025/t_9928c451c6ed4309957b02c1fc388ff1_name_file_1920x1080_5400_v4_.jpg" scrolling="no" marginheight="0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="video-caption default max-w-[1080px] mx-auto mt-2 mb-4">
+      <p>Here’s the caption describing what the three writers are talking about.</p>
+    </div>
+  </GridRow>
+
+  <GridRow variant={'inline'} additionalClasses={'gap-y-5 pt-2 pb-6'}>
+
     <Paragraph
       >The Strib’s trio passed the first competency test by making Pro Football
       Hall of Famers Randy Moss, Steve Hutchinson and Jared Allen three of their
@@ -119,7 +137,7 @@
   <GridRow additionalClasses="justify-self-center text-center w-[60%] mx-auto pt-16 pb-14">
     <hr style="border-width: 2px;border-color: #ffb601 !important;" />
     <div style="margin: -45px auto auto auto;max-width: 85px;background: white;padding: 10px;">
-      <img src="https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/png%20assets/purple%20logo1.png"/>
+      <img alt="Star Tribune Star" src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/strib-star.png?w=85">
     </div>
   </GridRow>
 

@@ -44,56 +44,60 @@ Renders a visual replica of the Immersive Template hero.
   let {
     sectionLabel = "",
     headline = "",
-    timestamp = "",
+    timestamp = "December 24, 2025 AT 12:01AM",
     heroImageUrl = "",
     heroImageCaption = "",
     heroImageAltText = "",
     dek = "",
-    authorName = "",
-    authorBioUrl = "",
+    authorName = "Mark Craig",
+    authorBioUrl = "https://www.startribune.com/author/mark-craig/6370584",
   } = $props();
 </script>
 <div class="herobox">
 <Grid additionalClasses="">
+  <GridRow variant={"fullBleed"}>
 
+    <!-- hero image -->
 
-    <GridRow variant={"fullBleed"}>
-      <Image
-        variant={"captionCentered"}
-        src={"https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/png%20assets/test-hero.png"}
-
-      />
-    </GridRow>
+    <div class="desktop-hero-image hidden lg:block max-w-[1800px] mx-auto">
+      <img class="" alt="Viking Quarter Century Team hero" src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/lg-placeholder.png?w=1800" />
+    </div>
+    <div class="tablet-hero-image hidden md:block lg:hidden max-w-[1800px] mx-auto">
+      <img class="" alt="Viking Quarter Century Team hero" src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/md-placeholder.png?w=1200" />
+    </div>
+    <div class="tablet-hero-image block md:hidden max-w-[1800px] mx-auto">
+      <img class="" alt="Viking Quarter Century Team hero" src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/xs-placeholder.png?w=768" />
+    </div>
+    <p class="text-center mb-8 rt-Box font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU mt-[6px] px-4">Images provided by the Associated Press, photo illustration by Joe Rull</p>
+  </GridRow>
   
+  <GridRow additionalClasses="justify-self-center text-center w-[100vw]">
 
-  <GridRow
-    additionalClasses="justify-self-center text-center w-[100vw]]"
-  >
-  <div class="flex flex-col gap-y-6 md:gap-y-8 text-center max-w-[800px] mx-auto leading-[1] pb-6 pt-4">
-    <Headline>Meet the Minnesota Star Tribune’s Vikings All-Quarter-Century Team</Headline>
-    <!-- <Timestamp>{timestamp}</Timestamp> -->
-  </div>
-    <div class="flex flex-col gap-y-5 md:justify-items-center md:items-center mx-auto max-w-[550px]">
-      <Dek additionalClasses="text-[1.75rem]">
-        Three longtime Vikings reporters picked 27 players and a head coach who were the best at their position from 2000 to 2025. 
-      </Dek>
-      <div class="flex items-center w-full gap-x-2 md:justify-center">
-        <div class="flex flex-col gap-y-0.5 gap-x-1 md:flex-row">
-          {#if authorName}
-            <div class="flex">
-              <Byline href={authorBioUrl}>By {authorName}</Byline>
-            </div>
-          {/if}
+    <!-- eyebrow -->
 
-          <span class="text-text-secondary font-utility-label-reg-02 pb-14">
-            The Minnesota Star Tribune
-          </span>
-        </div>
-      </div>
+    <a role="link" data-testid="link-button" class="Button_button__9QGZa link large-size Button_button-link__auMnb" href="/sports/vikings">
+        <p class="px-4 rt-Text break-words text-text-color-01 uppercase font-utility-label-bold-caps-02 text-center">Vikings</p>
+    </a>
+
+    <!-- headline -->
+
+    <div class="flex flex-col gap-y-6 md:gap-y-8 text-center max-w-[1200px] mx-auto leading-[1] pb-4 md:pb-6 pt-4">
+      <h1 class="font-[publico-headline-black] px-4 text-text-primary text-[1rem] xs:text-[1.8rem] md:text-[3rem] lg:text-[4rem]">Meet the Minnesota <span class="whitespace-nowrap">Star Tribune’s</span> Vikings <span class="whitespace-nowrap">All-Quarter-Century</span> Team</h1>
     </div>
 
+    <!-- dek, byline and timestamp -->
 
-
+    <div class="flex flex-col gap-y-5 md:justify-items-center md:items-center mx-auto px-4">
+      <h2 class="mx-auto font-editorial-non-news-heading-05 text-[.9rem] xs:text-[1.2rem] xs:max-w-[375px] md:text-[1.5rem] md:max-w-[475px] lg:text-[1.75rem] lg:max-w-[800px] text-text-primary">
+        Three longtime Vikings reporters picked 27 players and a head coach who were the best at their positions from 2000 to 2025.
+      </h2>
+      <div class="mt-4">
+        <span class="font-utility-label-bold-02 text-text-primary"><a href="https://www.startribune.com/author/mark-craig/6370584" target="_blank" class="whitewhitespace-nowrap">Mark Craig</a></span>, <span class="font-utility-label-bold-02 text-text-primary"><a href="https://www.startribune.com/author/ben-goessling/6134708" target="_blank" class="whitewhitespace-nowrap">Ben Goessling</a></span>, <span class="font-utility-label-bold-02 text-text-primary"><a href="https://www.startribune.com/author/andrew-krammer/6370577" target="_blank" class="whitewhitespace-nowrap">Andrew Krammer</a></span> <span class="text-text-secondary font-utility-label-reg-02 block mt-[6px]">The Minnesota Star Tribune</span>
+      </div>
+      <span class="mb-4 font-utility-label-reg-caps-03 text-text-secondary">
+        December 24, 2025 AT 12:01AM
+      </span>
+    </div>
   </GridRow>
   <GridRow
   additionalClasses="justify-self-center text-center w-[60%] mx-auto pt-12 pb-0"
@@ -104,7 +108,7 @@ margin: -45px auto auto auto;
 max-width: 85px;
 background: white;
 padding: 10px;
-"><img src="https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/png%20assets/purple%20logo1.png"></div>
+"><img alt="Star Tribune Star" src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/strib-star.png?w=85"></div>
 </GridRow>
 </Grid>
 </div>

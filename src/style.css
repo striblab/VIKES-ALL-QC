@@ -35,13 +35,7 @@
       transition: all 0.25s ease;
   }
 
-  .poslabel {
-      text-align: center;
-      font-family: 'Graphik-semibold';
-      font-size: 20px;
-      padding-bottom: 8px;
-      padding-top: 15px;
-  }
+
 
   .intro-text {
       max-width: 575px;
@@ -110,11 +104,7 @@
       backface-visibility: hidden;
   }
 
-  .card-header {
-      margin: auto;
-      text-align: center;
-      padding-top: 11%;
-  }
+
 
   .posinfo {
       font-family: 'Graphik Semibold';
@@ -276,9 +266,7 @@
         font-size: 14px !important; 
     }
 
-    .nameplate {
-        margin-top: 10px;
-    }
+
     .fadedScroller_fade {
         height: 40px;
         background: linear-gradient(to bottom,
@@ -307,9 +295,7 @@
     .posinfo {
         font-size: 14px !important; 
     }
-    .nameplate {
-        margin-top: 10px;
-    }
+
 
     .fadedScroller_fade {
         height: 40px;
@@ -348,11 +334,7 @@
 }
 
 
-  .card-list .card .card-content {
-      height: 100%;
-      position: relative;
-      background-color: #fff;
-  }
+
 
   .card-list .card .card-content a,
   .card-list .card .card-content a:hover,
@@ -388,13 +370,7 @@
       background-repeat: no-repeat;
   }
 
-  .poslabel {
-      text-align: center;
-      font-family: 'Graphik-SEMIbold';
-      font-size: 20px;
-      padding-bottom: 8px;
-      padding-top: 15px;
-  }
+
 
   .leadertext {
       font-family: 'Graphik-Bold';
@@ -408,18 +384,9 @@
 
 
 
-  .card-header {
-      margin: auto;
-      text-align: center;
-      padding-top: 11%;
-  }
 
-  .nameplate {
-      font-family: 'Graphik';
-      font-weight: bold;
-      font-size: 26px;
-      line-height: 90%;
-  }
+
+
 
   .posinfo {
       font-family: Graphik;

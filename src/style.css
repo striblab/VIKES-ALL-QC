@@ -1,474 +1,278 @@
-  .card .card-content {
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-  }
-
-  .card:hover .card-content {
-      transform: rotateY(180deg);
-  }
-
-  .card-front,
-  .card-back {
-      -webkit-backface-visibility: hidden;
-      /* Safari */
-      backface-visibility: hidden;
-      box-shadow: 7px 7px 7px #a1a1a1;
-  }
-
-  .card-back {
-      transform: rotateY(180deg);
-  }
-
-  .card .card-content a,
-  .card .card-content a:hover,
-  .card .card-content a:visited,
-  .card .card-content a:active {
-      box-shadow: 0 1px 0 #999;
-      color: #000;
-      padding: 0;
-      text-decoration: none;
-  }
-
-  .card .card-content a:hover,
-  .card .card-content a:active {
-      box-shadow: 0 1px 0 #444;
-      transition: all 0.25s ease;
-  }
-
-
-
-  .intro-text {
-      max-width: 575px;
-      margin: auto;
-      font-family: 'Graphik';
-      font-size: 16.5px;
-      line-height: 140%;
-      padding: 60px 0 60px;
-  }
-
-  .leadertext {
-      font-family: 'Graphik-bold';
-      text-transform: uppercase;
-      font-size: 36px;
-      margin: auto;
-      text-align: center;
-      line-height: 110%;
-      padding-bottom: 15px;
-  }
-
-  .toggler {
-      font-size: 18px;
-      text-align: center;
-      margin: auto;
-      font-family: 'Graphik';
-      padding-bottom: 25px;
-      text-transform: uppercase;
-      max-width: 575px;
-      letter-spacing: 2px;
-      padding: 3px;
-  }
-
-
-  .hero-ex {
-      max-width: 100vw;
-      margin: 0 !important;
-  }
-
-  .hero-img {
-      max-width: 100vw;
-      margin: 0;
-  }
-
-  .hero-text {
-      max-width: 750px;
-      text-align: center;
-      margin: auto;
-  }
-
-
-
-  div.byline {
-      font-family: 'Graphik';
-  }
-
-  div.dateline {
-      font-family: 'Graphik';
-      text-transform: uppercase;
-      font-size: 80%;
-      letter-spacing: 1.5px;
-  }
-
-
-
-  .cardback-content {
-      backface-visibility: hidden;
-  }
-
-
-
-  .posinfo {
-      font-family: 'Graphik Semibold';
-      font-size: 12px;
-  }
-
-  .posinfo b {
-      color: #472a82 !important;
-  }
-
-  .divider img {
-      width: inherit;
-  }
-
-  .divider {
-      width: inherit;
-      box-sizing: border-box;
-      padding: 5px 0;
-  }
-
-  .blurb {
-      font-family: 'Graphik';
-      font-size: 15px;
-      overflow: scroll !important;
-      max-height: 190px;
-      margin: 18% 8.5% auto 12%;
-      text-align: justify;
-      padding-right: 2%;
-  }
-
-  ::-webkit-scrollbar {
-      -webkit-appearance: none;
-      width: 5px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-      border-radius: 100px;
-      background-color: rgba(0, 0, 0, 0.5);
-      -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-  }
-
-  *::-webkit-scrollbar-corner {
-      background: transparent;
-  }
-
-  .other_voters {
-    text-align: left !important;
-  }
-
-  .attrib {
-      backface-visibility: hidden;
-      text-align: right;
-      margin: 5px 10px 0 0;
-  }
-
-  .fadedScroller_fade {
-      height: 40px;
-      background: linear-gradient(to bottom,
-              rgba(251, 251, 251, 0) 0%,
-              rgba(255, 251, 239, 1) 100%);
-      position: relative;
-      background-color: rgba(255, 251, 239, 1) 100%;
-      width: 76%;
-      margin: -55px auto auto auto;
-  }
-
-  html {
-      scroll-behavior: smooth;
-  }
-
-  .card-list {
-      display: flex;
-      flex-flow: row wrap;
-      max-width: 2000px;
-      gap: 5px;
-      padding: 0 0 0 0%;
-      margin: auto;
-      justify-content: center;
-  }
-
-  @media (max-width: 1614px) {
-      .card-list {
-          max-width: 1200px;
-      }
-  }
-
-  @media screen and (max-width: 1614px) {
-      .CARD-LIST {
-          display: flex;
-          flex-flow: column;
-      }
-
-      .eleven {
-          order: 11;
-      }
-
-      .ten {
-          order: 10;
-      }
-
-      .nine {
-          order: 9;
-      }
-
-      .eight {
-          order: 8;
-      }
-
-      .seven {
-          order: 7;
-      }
-
-      .six {
-          order: 6;
-      }
-
-      .five {
-          order: 5;
-      }
-
-      .four {
-          order: 4;
-      }
-
-      .three {
-          order: 3;
-      }
-
-      .two {
-          order: 2;
-      }
-
-      .one {
-          order: 1;
-      }
-  }
-
-  .card-list .card {
-    width: auto;
-      cursor: pointer;
-      padding: 0 10px 30px 10px;
-      aspect-ratio: 1750 / 2457 !important;
-  }
-
-
-  @media screen and (max-width: 1800px) {
-    .card-list .card {
-        min-width: 280px !important;
-        max-width: 280px !important;
-
-    }
-
-    .blurb {
-        max-height: 210px!important;
-        padding-top: 10px !important;
-    }
-
-    .posinfo {
-        font-size: 14px !important; 
-    }
-
-
-    .fadedScroller_fade {
-        height: 40px;
-        background: linear-gradient(to bottom,
-                rgba(251, 251, 251, 0) 0%,
-                rgba(255, 251, 239, 1) 100%);
-        position: relative;
-        background-color: rgba(255, 251, 239, 1) 100%;
-        width: 76%;
-        margin: -52px auto auto auto;
-    }
-
+.card .card-content {
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.card:hover .card-content {
+    transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+.card-back {
+    transform: rotateY(180deg);
+}
+.cardback-content {
+    backface-visibility: hidden;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+*::-webkit-scrollbar-corner {
+    background: transparent;
 }
 
-@media screen and (min-width: 1801px) {
-    .card-list .card {
-        min-width: 280px !important;
-        max-width: 280px !important;
+/* card size overrides debugging */
 
-    }
-
-    .blurb {
-        max-height: 210px!important;
-        padding-top: 10px !important;
-    }
-
-    .posinfo {
-        font-size: 14px !important; 
-    }
-
-
-    .fadedScroller_fade {
-        height: 40px;
-        background: linear-gradient(to bottom,
-                rgba(251, 251, 251, 0) 0%,
-                rgba(255, 251, 239, 1) 100%);
-        position: relative;
-        background-color: rgba(255, 251, 239, 1) 100%;
-        width: 76%;
-        margin: -52px auto auto auto;
+/* @media (max-width: 611px) {
+    .card-list {
+        background-color: yellow !important;
     }
 }
-
-@media screen and (max-width: 1500px) {
-    .card-list .card {
-        min-width: 245px !important;
-    }
-
-    .blurb {
-        max-height: 180px!important;
-        padding-top: 5px !important;
+@media (min-width: 612px) and (max-width: 914px) {
+    .card-list {
+        background-color: blue !important;
     }
 }
-
-@media screen and (max-width: 1200px) {
-    .card-list .card {
-        min-width: 245px !important;
+@media (min-width: 915px) and (max-width: 1221px) {
+    .card-list {
+        background-color: pink !important;
     }
 }
-
-@media screen and (max-width: 600px) {
-    .card-list .card {
-        min-width: 235px !important;
-        max-width: 400px !important;
+@media (min-width: 1222px) and (max-width: 1530px) {
+    .card-list {
+        background-color: green !important;
     }
 }
+@media (min-width: 1531px) {
+    .card-list {
+        background-color: orange !important;
+    }
+} */
 
+/* card group show/hide */
 
+.offenseGroup .card.offense {
+    display: block;
+}
 
+.offenseGroup .card.defense,
+.offenseGroup .card.specialteams {
+    display: none;
+}
 
-  .card-list .card .card-content a,
-  .card-list .card .card-content a:hover,
-  .card-list .card .card-content a:visited,
-  .card-list .card .card-content a:active {
-      box-shadow: 0 1px 0 #999;
-      color: #000;
-      padding: 0;
-      text-decoration: none;
-  }
+.defenseGroup .card.defense {
+    display: block;
+}
 
-  .card-list .card .card-content a:hover,
-  .card-list .card .card-content a:active {
-      box-shadow: 0 1px 0 #444;
-      transition: all 0.25s ease;
-  }
+.defenseGroup .card.offense,
+.defenseGroup .card.specialteams {
+    display: none;
+}
 
-  .front,
-  .back {
-      height: 100%;
-      border-right: none;
-      border-bottom: none;
-      box-shadow: 7px 7px 7px #a1a1a1;
-      padding: 0px;
-      position: relative;
-      background-color: #fff;
-  }
+.specialteamsGroup .card.specialteams {
+    display: block;
+}
 
-  .front,
-  .back {
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-  }
-
-
-
-  .leadertext {
-      font-family: 'Graphik-Bold';
-      text-transform: uppercase;
-      font-size: 2rem;
-      margin: auto;
-      text-align: center;
-      line-height: 110%;
-      padding-bottom: 15px;
-  }
-
-
-
-
-
-
-
-  .posinfo {
-      font-family: Graphik;
-      font-size: 12px;
-  }
-
-  .posinfo b {
-      color: #472a82 !important;
-  }
-
-  .divider img {
-      width: inherit;
-  }
-
-  .divider {
-      width: inherit;
-      box-sizing: border-box;
-      padding: 5px 0;
-  }
-
-
-  ::-webkit-scrollbar {
-      -webkit-appearance: none;
-      width: 5px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-      border-radius: 100px;
-      background-color: rgba(0, 0, 0, 0.5);
-      -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-  }
-
-  *::-webkit-scrollbar-corner {
-      background: transparent;
-  }
-
-  .attrib {
-      backface-visibility: hidden;
-      text-align: right;
-      margin: 5px 10px 0 0;
-  }
-
-  .fadedScroller_fade {
-      height: 40px;
-      background: linear-gradient(to bottom,
-              rgba(251, 251, 251, 0) 0%,
-              rgba(255, 251, 239, 1) 100%);
-      position: relative;
-      background-color: rgba(255, 251, 239, 1) 100%;
-      width: 76%;
-      margin: -55px auto auto auto;
-  }
-
-  .offenseGroup .card.offense {
-      display: block;
-  }
-
-  .offenseGroup .card.defense,
-  .offenseGroup .card.specialteams {
-      display: none;
-  }
-    
-  .defenseGroup .card.defense {
-      display: block;
-  }
-
-  .defenseGroup .card.offense,
-  .defenseGroup .card.specialteams {
-      display: none;
-  }
-
-  .specialteamsGroup .card.specialteams {
-      display: block;
-  }
-
-  .specialteamsGroup .card.offense,
-  .specialteamsGroup .card.defense {
-      display: none;
-  }
-  .active {
+.specialteamsGroup .card.offense,
+.specialteamsGroup .card.defense {
+    display: none;
+}
+button.active {
     font-weight: bold;
     background-color:rgba(255, 184, 28, 0.7);
     color: rgba(79, 38, 131, 1);
     border-left: 1px black;
-  }
+}
+
+
+
+
+/* @media (max-width: 1614px) {
+    .card-list {
+        max-width: 1200px;
+    }
+} */
+
+/* @media screen and (max-width: 1614px) {
+    .CARD-LIST {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .eleven {
+        order: 11;
+    }
+
+    .ten {
+        order: 10;
+    }
+
+    .nine {
+        order: 9;
+    }
+
+    .eight {
+        order: 8;
+    }
+
+    .seven {
+        order: 7;
+    }
+
+    .six {
+        order: 6;
+    }
+
+    .five {
+        order: 5;
+    }
+
+    .four {
+        order: 4;
+    }
+
+    .three {
+        order: 3;
+    }
+
+    .two {
+        order: 2;
+    }
+
+    .one {
+        order: 1;
+    }
+} */
+
+
+
+/* @media screen and (max-width: 1800px) {
+.card-list .card {
+    min-width: 280px !important;
+    max-width: 280px !important;
+
+}
+
+.blurb {
+    max-height: 210px!important;
+    padding-top: 10px !important;
+}
+
+
+
+
+.fadedScroller_fade {
+    height: 40px;
+    background: linear-gradient(to bottom,
+            rgba(251, 251, 251, 0) 0%,
+            rgba(255, 251, 239, 1) 100%);
+    position: relative;
+    background-color: rgba(255, 251, 239, 1) 100%;
+    width: 76%;
+    margin: -52px auto auto auto;
+}
+
+} */
+
+/* @media screen and (min-width: 1801px) {
+.card-list .card {
+    min-width: 280px !important;
+    max-width: 280px !important;
+
+}
+
+.blurb {
+    max-height: 210px!important;
+    padding-top: 10px !important;
+}
+
+.posinfo {
+    font-size: 14px !important; 
+}
+
+
+.fadedScroller_fade {
+    height: 40px;
+    background: linear-gradient(to bottom,
+            rgba(251, 251, 251, 0) 0%,
+            rgba(255, 251, 239, 1) 100%);
+    position: relative;
+    background-color: rgba(255, 251, 239, 1) 100%;
+    width: 76%;
+    margin: -52px auto auto auto;
+}
+} */
+
+/* @media screen and (max-width: 1500px) {
+.card-list .card {
+    min-width: 245px !important;
+}
+
+.blurb {
+    max-height: 180px!important;
+    padding-top: 5px !important;
+}
+}
+
+@media screen and (max-width: 1200px) {
+.card-list .card {
+    min-width: 245px !important;
+}
+}
+
+@media screen and (max-width: 600px) {
+.card-list .card {
+    min-width: 235px !important;
+    max-width: 400px !important;
+}
+} */
+
+
+
+
+/* .card-list .card .card-content a,
+.card-list .card .card-content a:hover,
+.card-list .card .card-content a:visited,
+.card-list .card .card-content a:active {
+    box-shadow: 0 1px 0 #999;
+    color: #000;
+    padding: 0;
+    text-decoration: none;
+}
+
+.card-list .card .card-content a:hover,
+.card-list .card .card-content a:active {
+    box-shadow: 0 1px 0 #444;
+    transition: all 0.25s ease;
+}
+
+.front,
+.back {
+    height: 100%;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 7px 7px 7px #a1a1a1;
+    padding: 0px;
+    position: relative;
+    background-color: #fff;
+} */
+
+/* .front,
+.back {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+} */
+
+
+
+

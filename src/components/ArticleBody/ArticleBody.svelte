@@ -134,19 +134,19 @@
     >
   </GridRow>
 
-  <GridRow additionalClasses="justify-self-center text-center w-[60%] mx-auto pt-16 pb-14">
-    <hr style="border-width: 2px;border-color: #ffb601 !important;" />
-    <div style="margin: -45px auto auto auto;max-width: 85px;background: white;padding: 10px;">
-      <img alt="Star Tribune Star" src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/strib-star.png?w=85">
+  <GridRow additionalClasses="justify-self-center text-center w-[80%] md:w-[60%] mx-auto pt-8 pb-8">
+    <hr class="border-[#ffb601] border-[1px]">
+    <div class="bg-white w-[60px] relative -mt-[23px] mx-auto px-2">
+      <img class="w-[60px] mx-auto" alt="Star Tribune Star" src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/strib-star.png?w=120">
     </div>
   </GridRow>
 
   <GridRow variant={'fullBleed'}>
-    <div class="leadertext pb-4">STAR TRIBUNE VIKINGS<br>ALL-QUARTER CENTURY</div>
+    <div class="leadertext font-[Graphik-bold] uppercase text-center text-[1.5rem] mx-auto leading-[120%] pb-4 -tracking-[1px]">Minnesota Star Tribune<br>Vikings all-quarter century</div>
     
     <!-- print the nav buttons -->
-    
-    <div class="toggler">
+
+    <div class="toggler pt-2 text-[1.15rem] text-center mx-auto font-[Graphik-regular] pb-2 letterspacing-[2px]">
       {#each groups as g}
         <button
           type="button"

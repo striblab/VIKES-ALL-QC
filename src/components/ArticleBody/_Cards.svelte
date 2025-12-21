@@ -49,61 +49,62 @@
   }
 </script>
 
-<div
-  class="bg-[yellow] my-8 card-list max-w-[1800px] gap-5 flex flex-row flex-wrap p-0 mx-auto justify-center"
->
+<div class="my-8 card-list max-w-[1800px] gap-9 flex flex-row flex-wrap py-0 px-4 mx-auto justify-center">
   {#each items as item, i (i)}
     {#if item.winner}
-    <button
-        type="button"
-        class="card !bg-[red] card-{items.indexOf(item) + 1} {getGroupClass(
-          item.group,
-        )} cursor-pointer p-0 pb-8 aspect-[1750/2457] perspective-[1000px]"
-        class:flip={flippedId === i}
-        aria-pressed={flippedId === i}
-        aria-label="Flip card for {item.name}"
-        on:mouseenter={() => onEnter(i)}
-        on:mouseleave={() => onLeave(i)}
-        on:click={() => onTap(i)}
-        on:keydown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            onTap(i);
-          }
-        }}
-        style="background:none; border:none; padding:0; text-align:inherit;"
+      <button
+          type="button"
+          class="card w-[270px] bg-none p-0 text-left border-0 card-{items.indexOf(item) + 1} {getGroupClass(
+            item.group,
+          )} cursor-pointer aspect-[1750/2457] perspective-[1000px]"
+          class:flip={flippedId === i}
+          aria-pressed={flippedId === i}
+          aria-label="Flip card for {item.name}"
+          on:mouseenter={() => onEnter(i)}
+          on:mouseleave={() => onLeave(i)}
+          on:click={() => onTap(i)}
+          on:keydown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              onTap(i);
+            }
+          }}
       >
-      <div class="text-center font-[Graphik-semibold] text-[1rem] pb-2">{item.position}</div>
-      <div class="card-content relative w-full h-full">
-        <div
-          class="card-front absolute w-full h-full bg-no-repeat bg-cover bg-center p-0"
-          style="background-image:url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/card-finals/{item.image_url}');"
-        ></div>
-        <div class="card-back absolute w-full h-full font-[Graphik-regular]">
-          <div
-            class="cardback-content relative aspect-[1750/2457] bg-cover w-full h-full bg-[url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/img/cardback.png')]"
-          >
-            <div class="card-header text-center pt-[11%] mx-auto h-full bg-[pink] opacity-[50%]">
-
-              <div class="nameplate pb-2 font-[Graphik-bold] text-[1.25rem] leading-[90%]">{item.name}</div>
-              <div class="posinfo pb-1">
-                <span class="name font-[Graphik-semibold] text-[#4f2683]">{item.position}</span>
-                <span class="jersey_num">#{item.jersey_number} &#8226; </span>
-                <span class="years">{item.years}</span>
+        <div class="text-center font-[Graphik-semibold] text-[1rem] pb-2">
+          {item.position}
+        </div>
+        <div class="card-content relative w-full h-full">
+          <div class="card-front shadow-[10px_10px_20px_-5px_rgba(0,0,0,.5)] absolute w-full h-full p-0 bg-no-repeat bg-cover bg-center" style="background-image:url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/card-finals/{item.image_url}')"></div>
+          <div class="card-back shadow-[10px_10px_20px_-5px_rgba(0,0,0,.5)] absolute w-full h-full font-[Graphik-regular]">
+            <div class="cardback-content relative aspect-[1750/2457] bg-cover w-full h-full bg-[url('https://static.startribune.com/news/projects/all/2025-VIKES-ALLQC/img/cardback-122125-2.png')]">
+              <div class="card-back-body pt-[9%] mx-auto h-full">
+                <div class="nameplate pb-[6px] text-center font-[Graphik-bold] text-[1.25rem] leading-[90%]">
+                  {item.name}
+                </div>
+                <div class="posinfo text-center text-[.85rem]">
+                  <span class="name font-[Graphik-semibold] text-[#4f2683]">{item.position}</span>
+                  <span class="jersey_num">#{item.jersey_number} &#8226; </span>
+                  <span class="years">{item.years}</span>
+                </div>
+                <div class="blurb relative z-10 font-[Graphik-regular] text-[.85rem] overflow-scroll overflow-x-hidden h-full max-h-[68%] mt-[17%] mr-[3.75%] ml-[3.75%]">
+                  <div class="blurb-text pl-4 pr-4 leading-[1.1rem] letterspacing-[-2px]">
+                    {item.blurb}
+                    <div class="attrib text-right mt-[.5rem]">
+                      &mdash; <span class="font-[Graphik-semibold]">{item.blurb_author}</span>
+                    </div>
+                    <div class="other_voters pt-2 pb-4">
+                      Also recieving votes:<br />{@html item.other_votes}
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="blurb">
-                <span class="blurb-text">{item.blurb}</span>
-                <div class="attrib pb-1">&mdash; <b>{item.blurb_author}</b></div>
-                <div class="other_voters pt-2 pb-8"
-                  >Also recieving votes:<br />{@html item.other_votes}</div
-                >
-              </div>
-              <div class="fadedScroller_fade"></div>
+            </div>
+            <div class="fadedScroller_fade z-20 h-[1.5rem] w-full absolute bottom-[6.2773%] pr-[8%] pl-[8%]">
+              <div class="h-full bg-[linear-gradient(to_bottom,rgba(251,251,251,0)_0%,rgba(255,251,238,1)_100%)]"></div>
             </div>
           </div>
         </div>
-      </div>
-    </button>
+      </button>
     {/if}
   {/each}
 </div>

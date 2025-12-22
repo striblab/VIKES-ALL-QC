@@ -24,44 +24,64 @@
 
   // sticky card nav support
 
-  import { onMount } from 'svelte';
-  let headerOffset = $state(0);
-  function updateCardNavOffset() {
-    const header = document.getElementById('global-header');
-    if (!header) return;
-    headerOffset = header.offsetHeight;
-  }
-  $effect(() => {
-    updateCardNavOffset();
-    window.addEventListener('resize', updateCardNavOffset);
-    return () => window.removeEventListener('resize', updateCardNavOffset);
-  });
-  function observeCardNav() {
-    const el = document.getElementById('cardNav');
-    if (!el) return;
-    const offset = headerOffset;
-    const checkPosition = () => {
-      const { top } = el.getBoundingClientRect();
+  import { onMount } from "svelte";
 
-      if (top <= offset) {
-        el.classList.add('stuck');
-      } else {
-        el.classList.remove('stuck');
-      }
+  let headerOffset = $state(0);
+
+  function setHeaderOffset(px) {
+    headerOffset = px;
+    document.documentElement.style.setProperty("--header-offset", `${px}px`);
+  }
+
+  onMount(() => {
+    const header = document.getElementById("global-header");
+    const cardNav = document.getElementById("cardNav");
+    const sentinel = document.getElementById("cardNavSentinel");
+
+    if (!header || !cardNav || !sentinel) return;
+
+    // 1) Keep header offset in sync even when the header shrinks after scroll
+    const ro = new ResizeObserver(() => {
+      setHeaderOffset(header.offsetHeight);
+      // When header height changes, we need to rebuild the IO with a new rootMargin.
+      rebuildIO();
+    });
+
+    ro.observe(header);
+
+    // Initial measure
+    setHeaderOffset(header.offsetHeight);
+
+    // 2) Toggle .stuck only when crossing the navbar-bottom line
+    let io;
+
+    const rebuildIO = () => {
+      if (io) io.disconnect();
+
+      io = new IntersectionObserver(
+        ([entry]) => {
+          // When the sentinel is no longer visible (above the threshold),
+          // the cardNav has reached/passed the sticky line.
+          cardNav.classList.toggle("stuck", !entry.isIntersecting);
+        },
+        {
+          root: null,
+          threshold: 0,
+          // shift the "top" boundary down by the header height
+          rootMargin: `-${headerOffset}px 0px 0px 0px`,
+        }
+      );
+
+      io.observe(sentinel);
     };
-    window.addEventListener('scroll', checkPosition, { passive: true });
-    window.addEventListener('resize', checkPosition);
+
+    rebuildIO();
 
     return () => {
-      window.removeEventListener('scroll', checkPosition);
-      window.removeEventListener('resize', checkPosition);
+      ro.disconnect();
+      if (io) io.disconnect();
     };
-  }
-  onMount(() => {
-    const cleanup = observeCardNav();
-    return cleanup;
   });
-
 </script>
 
 <svelte:window bind:innerWidth />
@@ -175,7 +195,9 @@
     
     <!-- print the nav buttons -->
 
-    <div id="cardNav" style={`top:${headerOffset}px`} class="toggler px-4 py-4 text-[1rem] leading-[100%] md:text-[1.15em] text-center mx-auto font-[Graphik-regular] letterspacing-[2px] sticky z-20 bg-[white]">
+    <div id="cardNavSentinel" aria-hidden="true"></div>
+
+    <nav id="cardNav" style={`top: var(--header-offset, 0px);`} class="cardNav toggler px-4 py-4 text-[1rem] leading-[100%] md:text-[1.15em] text-center mx-auto font-[Graphik-regular] letterspacing-[2px] sticky z-20 bg-[white]">
       {#each groups as g}
         <button
           type="button"
@@ -186,7 +208,7 @@
           {g.label}
         </button>
       {/each}
-    </div>
+      </nav>
 
     <div id="cardGroups" class={groupClass}>
       <Cards />

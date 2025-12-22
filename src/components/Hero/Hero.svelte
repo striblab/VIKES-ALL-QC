@@ -52,20 +52,6 @@ Renders a visual replica of the Immersive Template hero.
     authorName = "Mark Craig",
     authorBioUrl = "https://www.startribune.com/author/mark-craig/6370584",
   } = $props();
-
-  // re-using this function from articlebody because I can't seem to find a place to put it where all components can access the value of headerOffset
-
-  let headerOffset = $state(0);
-  function updateCardNavOffset() {
-    const header = document.getElementById('global-header');
-    if (!header) return;
-    headerOffset = header.offsetHeight;
-  }
-  $effect(() => {
-    updateCardNavOffset();
-    window.addEventListener('resize', updateCardNavOffset);
-    return () => window.removeEventListener('resize', updateCardNavOffset);
-  });
 </script>
 
 <Grid additionalClasses="">
@@ -73,7 +59,7 @@ Renders a visual replica of the Immersive Template hero.
 
     <!-- hero image -->
 
-    <div class="desktop-hero-image hidden lg:block max-w-[1800px] mx-auto" style={`margin-top:${headerOffset}px`}>
+    <div class="desktop-hero-image hidden lg:block max-w-[1800px] mx-auto">
       <img class="" alt="Viking Quarter Century Team hero" src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/lg-placeholder.png?w=1800" />
     </div>
     <div class="tablet-hero-image hidden md:block lg:hidden max-w-[1800px] mx-auto">

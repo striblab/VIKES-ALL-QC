@@ -21,6 +21,47 @@
   function setGroup(next) {
     activeGroup = next;
   }
+
+  // sticky card nav support
+
+  import { onMount } from 'svelte';
+  let headerOffset = $state(0);
+  function updateCardNavOffset() {
+    const header = document.getElementById('global-header');
+    if (!header) return;
+    headerOffset = header.offsetHeight;
+  }
+  $effect(() => {
+    updateCardNavOffset();
+    window.addEventListener('resize', updateCardNavOffset);
+    return () => window.removeEventListener('resize', updateCardNavOffset);
+  });
+  function observeCardNav() {
+    const el = document.getElementById('cardNav');
+    if (!el) return;
+    const offset = headerOffset;
+    const checkPosition = () => {
+      const { top } = el.getBoundingClientRect();
+
+      if (top <= offset) {
+        el.classList.add('stuck');
+      } else {
+        el.classList.remove('stuck');
+      }
+    };
+    window.addEventListener('scroll', checkPosition, { passive: true });
+    window.addEventListener('resize', checkPosition);
+
+    return () => {
+      window.removeEventListener('scroll', checkPosition);
+      window.removeEventListener('resize', checkPosition);
+    };
+  }
+  onMount(() => {
+    const cleanup = observeCardNav();
+    return cleanup;
+  });
+
 </script>
 
 <svelte:window bind:innerWidth />
@@ -56,24 +97,11 @@
       >The defense includes two tackles, two edge rushers, two linebackers, two
       safeties and three corners, one of them a nickel back.</Paragraph
     >
-
-  </GridRow>
-
-  <GridRow variant={'fullBleed'}>
-    <!-- writer's video placeholder -->
-
-    <link rel="stylesheet" href="https://static.startribune.com/news/tools/embeds/video-player/css/video-iframe_070125.css">
-    <div class="video-embed default" style="max-width:1080px;margin: 0 auto 0 auto;">
-      <div class="video-inner">
-        <iframe title="Sports writers discuss their Quarter Century votes" src="https://static.startribune.com/news/tools/embeds/video-player/player-no-ads.html?url=https://d2rhwptr68oefh.cloudfront.net/wp-startribunemedia/20251202/692f4e62f765941d304dc8a6/t_d161c1c8035e457b9a04162facb37ea5_name_op_hts_thermostat_video_embed/file_1920x1080-5400-v4.mp4&amp;shape=default&amp;thumbnail=https://arc-goldfish-startribunemedia-thumbnails.s3.amazonaws.com/12-02-2025/t_9928c451c6ed4309957b02c1fc388ff1_name_file_1920x1080_5400_v4_.jpg" scrolling="no" marginheight="0" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class="video-caption default max-w-[1080px] mx-auto mt-2 mb-4">
-      <p>Here’s the caption describing what the three writers are talking about.</p>
-    </div>
-  </GridRow>
-
-  <GridRow variant={'inline'} additionalClasses={'gap-y-5 pt-2 pb-6'}>
+    
+    <Paragraph>
+      <iframe style="aspect-ratio: 16 / 9;width:100%;max-width:1080px;margin:auto;" src="https://www.youtube.com/embed/1FxJUubvDCc" title="YouTube video player" frameborder="0" allow="picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="rt-Box mt-2 font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU">Ben Goessling and Emily Leiker discuss both the off-field and on-field happenings from the Vikings trip to face the Giants at MetLife Stadium, including plane troubles out of MSP and injuries to J.J. McCarthy and others. Plus, they discuss big performances by Justin Jefferson and Aaron Jones Sr., and how Max Brosmer fared helming the offense through the second half.</div>
+    </Paragraph>
 
     <Paragraph
       >The Strib’s trio passed the first competency test by making Pro Football
@@ -147,7 +175,7 @@
     
     <!-- print the nav buttons -->
 
-    <div class="toggler px-4 pt-2 text-[1rem] md:text-[1.15em] text-center mx-auto font-[Graphik-regular] pb-2 letterspacing-[2px]">
+    <div id="cardNav" style={`top:${headerOffset}px`} class="toggler px-4 py-4 text-[1rem] leading-[100%] md:text-[1.15em] text-center mx-auto font-[Graphik-regular] letterspacing-[2px] sticky z-20 bg-[white]">
       {#each groups as g}
         <button
           type="button"

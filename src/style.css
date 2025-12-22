@@ -29,6 +29,9 @@
 *::-webkit-scrollbar-corner {
     background: transparent;
 }
+.stuck {
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
+}
 
 /* card size overrides debugging */
 

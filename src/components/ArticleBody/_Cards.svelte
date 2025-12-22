@@ -49,7 +49,7 @@
   }
 </script>
 
-<div class="my-8 card-list max-w-[1800px] gap-9 flex flex-row flex-wrap px-4 mx-auto justify-center">
+<div class="my-4 card-list max-w-[1800px] gap-9 flex flex-row flex-wrap px-4 mx-auto justify-center">
   {#each items as item, i (i)}
     {#if item.winner}
       <button

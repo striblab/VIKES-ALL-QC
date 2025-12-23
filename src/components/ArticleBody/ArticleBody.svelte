@@ -12,7 +12,7 @@
   const groups = [
     { label: 'Offense', className: 'offenseGroup' },
     { label: 'Defense', className: 'defenseGroup' },
-    { label: 'ST/Coach', className: 'specialteamsGroup' }
+    { label: 'ST/Coach', className: 'specialteamsGroup' },
   ];
 
   let activeGroup = $state(groups[0].className);
@@ -24,19 +24,19 @@
 
   // sticky card nav support
 
-  import { onMount } from "svelte";
+  import { onMount } from 'svelte';
 
   let headerOffset = $state(0);
 
   function setHeaderOffset(px) {
     headerOffset = px;
-    document.documentElement.style.setProperty("--header-offset", `${px}px`);
+    document.documentElement.style.setProperty('--header-offset', `${px}px`);
   }
 
   onMount(() => {
-    const header = document.getElementById("global-header");
-    const cardNav = document.getElementById("cardNav");
-    const sentinel = document.getElementById("cardNavSentinel");
+    const header = document.getElementById('global-header');
+    const cardNav = document.getElementById('cardNav');
+    const sentinel = document.getElementById('cardNavSentinel');
 
     if (!header || !cardNav || !sentinel) return;
 
@@ -62,14 +62,14 @@
         ([entry]) => {
           // When the sentinel is no longer visible (above the threshold),
           // the cardNav has reached/passed the sticky line.
-          cardNav.classList.toggle("stuck", !entry.isIntersecting);
+          cardNav.classList.toggle('stuck', !entry.isIntersecting);
         },
         {
           root: null,
           threshold: 0,
           // shift the "top" boundary down by the header height
           rootMargin: `-${headerOffset}px 0px 0px 0px`,
-        }
+        },
       );
 
       io.observe(sentinel);
@@ -88,75 +88,143 @@
 
 <Grid additionalClasses={'gap-y-0'}>
   <GridRow variant={'inline'} additionalClasses={'gap-y-5 pt-2 pb-6'}>
-  <Paragraph>
-    <div class="drop-cap font-[publico-headline-black] float-left leading-none text-[76px] pr-2 relative -top-[2px] h-[50px]">F</div>rom no-brainer consensus picks to choosing three different quarterbacks and three different head coaches, the Minnesota Star Tribune’s Ben Goessling, Andrew Krammer and Mark Craig have used a combined half-century of experience covering the Vikings to assemble an All-Quarter Century team.
+    <Paragraph>
+      <div
+        class="drop-cap font-[publico-headline-black] float-left leading-none text-[76px] pr-2 relative -top-[2px] h-[50px]"
+      >
+        F
+      </div>
+      rom no-brainer consensus picks to choosing three different quarterbacks and
+      three different head coaches, the Minnesota Star Tribune’s Ben Goessling, Andrew
+      Krammer and Mark Craig have used a combined half-century of experience covering
+      the Vikings to assemble an All-Quarter Century team.
+    </Paragraph>
+
+    <Paragraph>Let the second-guessing and back-biting begin!</Paragraph>
+
+    <Paragraph>
+      Goessling (Year 14), Krammer (13) and Craig (23) were asked to pick 27
+      players — 11 on offense, 11 on defense and five specialists — and a coach
+      who were with the Vikings from the 2000 season to the present. The players
+      and coaches were evaluated on only those seasons they spent with the
+      Vikings during that span.
     </Paragraph>
 
     <Paragraph>
-    Let the second-guessing and back-biting begin!
+      The offense includes two wide receivers, one running back, one tight end
+      and a “flex” option that led to three different choices of skill players.
+      The five linemen are position specific.
     </Paragraph>
 
     <Paragraph>
-    Goessling (Year 14), Krammer (13) and Craig (23) were asked to pick 27 players — 11 on offense, 11 on defense and five specialists — and a coach who were with the Vikings from the 2000 season to the present. The players and coaches were evaluated on only those seasons they spent with the Vikings during that span. 
+      The defense includes two tackles, two edge rushers, two linebackers, two
+      safeties and three corners, one of them a nickelback.
     </Paragraph>
 
     <Paragraph>
-    The offense includes two wide receivers, one running back, one tight end and a “flex” option that led to three different choices of skill players. The five linemen are position specific.
+      <iframe
+        style="aspect-ratio: 16 / 9;width:100%;max-width:1080px;margin:auto;"
+        src="https://www.youtube.com/embed/t0AHMOM0Ais"
+        title="YouTube video player"
+        frameborder="0"
+        allow="picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <div
+        class="rt-Box mt-2 font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU"
+      >
+        On the Access Vikings podcast, Minnesota Star Tribune sportswriters Ben
+        Goessling, Mark Craig and Andrew Krammer discuss their All-Quarter
+        Century Team selections with colleague Emily Leiker; chat about the
+        merits of QBs Daunte Culpepper, Brett Favre and Kirk Cousins; debate
+        Danielle Hunter vs. Everson Griffen and more.
+      </div>
     </Paragraph>
 
     <Paragraph>
-    The defense includes two tackles, two edge rushers, two linebackers, two safeties and three corners, one of them a nickelback.
+      The Strib’s trio made Pro Football Hall of Famers Randy Moss, Steve
+      Hutchinson and Jared Allen three of their 19 unanimous choices. They also
+      agreed on four players — Adrian Peterson, Justin Jefferson, Harrison Smith
+      and Kevin Williams — who are likely on their way to Canton (Peterson and
+      Jefferson), currently a candidate (Williams) or will be given serious
+      consideration (Smith).
     </Paragraph>
 
     <Paragraph>
-      <iframe style="aspect-ratio: 16 / 9;width:100%;max-width:1080px;margin:auto;" src="https://www.youtube.com/embed/1FxJUubvDCc" title="YouTube video player" frameborder="0" allow="picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <div class="rt-Box mt-2 font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU">Ben Goessling and Emily Leiker discuss both the off-field and on-field happenings from the Vikings trip to face the Giants at MetLife Stadium, including plane troubles out of MSP and injuries to J.J. McCarthy and others. Plus, they discuss big performances by Justin Jefferson and Aaron Jones Sr., and how Max Brosmer fared helming the offense through the second half.</div>
+      Throw in nickelback Antoine Winfield, kick returner Cordarrelle Patterson,
+      punt returner Marcus Sherels and linebackers Chad Greenway and Eric
+      Kendricks as other no-brainers.
     </Paragraph>
 
     <Paragraph>
-    The Strib’s trio made Pro Football Hall of Famers Randy Moss, Steve Hutchinson and Jared Allen three of their 19 unanimous choices. They also agreed on four players — Adrian Peterson, Justin Jefferson, Harrison Smith and Kevin Williams — who are likely on their way to Canton (Peterson and Jefferson), currently a candidate (Williams) or will be given serious consideration (Smith).
+      Four of the consensus picks are current Vikings players: Jefferson, Smith,
+      Brian O’Neill and Byron Murphy Jr.
     </Paragraph>
 
     <Paragraph>
-    Throw in nickelback Antoine Winfield, kick returner Cordarrelle Patterson, punt returner Marcus Sherels and linebackers Chad Greenway and Eric Kendricks as other no-brainers.
+      The three selectors disagreed on very little. Craig liked second-year
+      kicker Will Reichard by a nose — and a very strong toe — over Ryan
+      Longwell, the pick of the other two. Danielle Hunter beat out Everson
+      Griffen at one of the edge spots; Pat Williams was chosen over Linval
+      Joseph at defensive tackle; and Corey Chavous got the nod over Anthony
+      Harris at strong safety. Joe Berger received a vote at right guard, not
+      enough to displace Dave Dixon. And Goessling and Craig liked current long
+      snapper Andrew DePaola over Krammer’s choice, Cullen Loeffler.
     </Paragraph>
 
     <Paragraph>
-    Four of the consensus picks are current Vikings players: Jefferson, Smith, Brian O’Neill and Byron Murphy Jr. 
+      But at two key positions, they disagreed quite a bit: Goessling, Krammer
+      and Craig chose three different coaches and three different quarterbacks,
+      speaking volumes as to why the first 25 years of this century have been
+      consistently inconsistent. In those cases, <a
+        href="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811"
+        target="_blank"
+        rel="noreferrer"
+        title="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811"
+        data-mrf-link="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811"
+        cmp-ltrk="Article Links"
+        cmp-ltrk-idx="0"
+        mrfobservableid="7af1131b-0213-4970-a9e4-14b0b3c66adb"
+        >we had readers vote to break the tie</a
+      >.
     </Paragraph>
 
     <Paragraph>
-    The three selectors disagreed on very little. Craig liked second-year kicker Will Reichard by a nose — and a very strong toe — over Ryan Longwell, the pick of the other two. Danielle Hunter beat out Everson Griffen at one of the edge spots; Pat Williams was chosen over Linval Joseph at defensive tackle; and Corey Chavous got the nod over Anthony Harris at strong safety. Joe Berger received a vote at right guard, not enough to displace Dave Dixon. And Goessling and Craig liked current long snapper Andrew DePaola over Krammer’s choice, Cullen Loeffler.
-    </Paragraph>
-
-    <Paragraph>
-    But at two key positions, they disagreed quite a bit: Goessling, Krammer and Craig chose three different coaches and three different quarterbacks, speaking volumes as to why the first 25 years of this century have been consistently inconsistent. In those cases, <a href="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811" target="_blank" rel="noreferrer" title="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811" data-mrf-link="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811" cmp-ltrk="Article Links" cmp-ltrk-idx="0" mrfobservableid="7af1131b-0213-4970-a9e4-14b0b3c66adb">we had readers vote to break the tie</a>. 
-    </Paragraph>
-
-    <Paragraph>
-    Here’s our Vikings All Quarter Century team. Like we said, let the second-guessing and back-biting begin! 
-    </Paragraph>
-
-    <Paragraph>
-    Goessling, Krammer and Craig debated their choices with Emily Leiker on the “Access Vikings” podcast. Watch it here. 
+      Here’s our Vikings All Quarter Century team. Like we said, let the
+      second-guessing and back-biting begin!
     </Paragraph>
   </GridRow>
 
-  <GridRow additionalClasses="justify-self-center text-center w-[80%] md:w-[60%] mx-auto pt-8 pb-8">
-    <hr class="border-[#ffb601] border-[1px]">
+  <GridRow
+    additionalClasses="justify-self-center text-center w-[80%] md:w-[60%] mx-auto pt-8 pb-8"
+  >
+    <hr class="border-[#ffb601] border-[1px]" />
     <div class="bg-white w-[60px] relative -mt-[23px] mx-auto px-2">
-      <img class="w-[60px] mx-auto" alt="Star Tribune Star" src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/strib-star.png?w=120">
+      <img
+        class="w-[60px] mx-auto"
+        alt="Star Tribune Star"
+        src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/strib-star.png?w=120"
+      />
     </div>
   </GridRow>
 
   <GridRow variant={'fullBleed'} additionalClasses="max-w-[2200px]">
-    <div class="leadertext font-[Graphik-bold] uppercase text-center text-[1.5rem] mx-auto leading-[120%] pb-4 -tracking-[1px]">Minnesota Star Tribune<br>Vikings all-quarter century</div>
-    
+    <div
+      class="leadertext font-[Graphik-bold] uppercase text-center text-[1.5rem] mx-auto leading-[120%] pb-4 -tracking-[1px]"
+    >
+      Minnesota Star Tribune<br />Vikings all-quarter century
+    </div>
+
     <!-- print the nav buttons -->
 
     <div id="cardNavSentinel" aria-hidden="true"></div>
 
-    <nav id="cardNav" style={`top: var(--header-offset, 0px);`} class="cardNav toggler px-4 py-4 text-[.8rem] leading-[100%] md:text-[1em] text-center mx-auto font-[Graphik-Semibold] tracking-[1.5px] sticky z-20 bg-[white]">
+    <nav
+      id="cardNav"
+      style={`top: var(--header-offset, 0px);`}
+      class="cardNav toggler px-4 py-4 text-[.8rem] leading-[100%] md:text-[1em] text-center mx-auto font-[Graphik-Semibold] tracking-[1.5px] sticky z-20 bg-[white]"
+    >
       {#each groups as g}
         <button
           type="button"
@@ -167,7 +235,7 @@
           {g.label}
         </button>
       {/each}
-      </nav>
+    </nav>
 
     <div id="cardGroups" class={groupClass}>
       <Cards />
@@ -176,12 +244,21 @@
 </Grid>
 <Grid additionalClasses={'gap-y-0'}>
   <GridRow variant={'inline'} additionalClasses={'gap-y-5 pt-2'}>
-    <div class="credits text-center mb-8 rt-Box font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU mt-[6px] px-4">
-      <p class="pb-[3px]"><span class="font-[Graphik-semibold]">Design and development:</span> Joe Rull and Jamie Hutt</p>
-      <p><span class="font-[Graphik-semibold]">Editing:</span> Naila-Jean Meyers, Kenneth Chia and Matt Tustison</p>
-</div>
+    <div
+      class="credits text-center mb-8 rt-Box font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU mt-[6px] px-4"
+    >
+      <p class="pb-[3px]">
+        <span class="font-[Graphik-semibold]">Design and development:</span> Joe
+        Rull and Jamie Hutt
+      </p>
+      <p>
+        <span class="font-[Graphik-semibold]">Editing:</span> Naila-Jean Meyers,
+        Ken Chia and Matt Tustison
+      </p>
+    </div>
   </GridRow>
 </Grid>
+
 <!-- 
 @component
 ### ArticleBody component

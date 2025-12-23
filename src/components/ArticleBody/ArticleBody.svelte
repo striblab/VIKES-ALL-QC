@@ -88,99 +88,58 @@
 
 <Grid additionalClasses={'gap-y-0'}>
   <GridRow variant={'inline'} additionalClasses={'gap-y-5 pt-2 pb-6'}>
-    
-    <Paragraph
-      ><p class="drop-cap font-[publico-headline-black] float-left leading-none text-[76px] pr-2 relative -top-[2px] h-[50px]">F</p>rom no-brainer consensus picks to choosing three different quarterbacks
-      and three different head coaches, the Minnesota Star Tribune’s Ben
-      Goessling, Andrew Krammer and Mark Craig have used a combined half-century
-      of experience covering the Vikings to assemble their versions of what the
-      Purple’s All-Quarter Century team should look like.</Paragraph
-    >
+  <Paragraph>
+    <div class="drop-cap font-[publico-headline-black] float-left leading-none text-[76px] pr-2 relative -top-[2px] h-[50px]">F</div>rom no-brainer consensus picks to choosing three different quarterbacks and three different head coaches, the Minnesota Star Tribune’s Ben Goessling, Andrew Krammer and Mark Craig have used a combined half-century of experience covering the Vikings to assemble an All-Quarter Century team.
+    </Paragraph>
 
-    <Paragraph>Let the second-guessing and back-biting begin!</Paragraph>
+    <Paragraph>
+    Let the second-guessing and back-biting begin!
+    </Paragraph>
 
-    <Paragraph
-      >Goessling (Year 14), Krammer (13) and Craig (23) were asked to pick 27
-      players – 11 on offense, 11 on defense and five specialists – and a head
-      coach who were with the Vikings from the 2000 season to the present. The
-      players and coaches were selected based on only those seasons they spent
-      with the Vikings.</Paragraph
-    >
+    <Paragraph>
+    Goessling (Year 14), Krammer (13) and Craig (23) were asked to pick 27 players — 11 on offense, 11 on defense and five specialists — and a coach who were with the Vikings from the 2000 season to the present. The players and coaches were evaluated on only those seasons they spent with the Vikings during that span. 
+    </Paragraph>
 
-    <Paragraph
-      >The offense includes two receivers, one running back, one tight end and a
-      “flex” option that led to three different choices of skill players. The
-      five linemen are position specific.</Paragraph
-    >
+    <Paragraph>
+    The offense includes two wide receivers, one running back, one tight end and a “flex” option that led to three different choices of skill players. The five linemen are position specific.
+    </Paragraph>
 
-    <Paragraph
-      >The defense includes two tackles, two edge rushers, two linebackers, two
-      safeties and three corners, one of them a nickel back.</Paragraph
-    >
-    
+    <Paragraph>
+    The defense includes two tackles, two edge rushers, two linebackers, two safeties and three corners, one of them a nickelback.
+    </Paragraph>
+
     <Paragraph>
       <iframe style="aspect-ratio: 16 / 9;width:100%;max-width:1080px;margin:auto;" src="https://www.youtube.com/embed/1FxJUubvDCc" title="YouTube video player" frameborder="0" allow="picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <div class="rt-Box mt-2 font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU">Ben Goessling and Emily Leiker discuss both the off-field and on-field happenings from the Vikings trip to face the Giants at MetLife Stadium, including plane troubles out of MSP and injuries to J.J. McCarthy and others. Plus, they discuss big performances by Justin Jefferson and Aaron Jones Sr., and how Max Brosmer fared helming the offense through the second half.</div>
     </Paragraph>
 
-    <Paragraph
-      >The Strib’s trio passed the first competency test by making Pro Football
-      Hall of Famers Randy Moss, Steve Hutchinson and Jared Allen three of their
-      19 unanimous choices. They also aced the second competency exam by
-      agreeing on four players – Adrian Peterson, Justin Jefferson, Harrison
-      Smith and Kevin Williams – who are likely on their way to Canton (Peterson
-      as early as 2027 and Jefferson), currently a candidate (Williams) or will
-      be given serious consideration (Smith).</Paragraph
-    >
+    <Paragraph>
+    The Strib’s trio made Pro Football Hall of Famers Randy Moss, Steve Hutchinson and Jared Allen three of their 19 unanimous choices. They also agreed on four players — Adrian Peterson, Justin Jefferson, Harrison Smith and Kevin Williams — who are likely on their way to Canton (Peterson and Jefferson), currently a candidate (Williams) or will be given serious consideration (Smith).
+    </Paragraph>
 
-    <Paragraph
-      >Throw in nickel back Antoine Winfield, kick returner Cordarrelle
-      Patterson, punt returner Marcus Sherels and linebackers Chad Greenway and
-      Eric Kendricks as other no-brainers.</Paragraph
-    >
+    <Paragraph>
+    Throw in nickelback Antoine Winfield, kick returner Cordarrelle Patterson, punt returner Marcus Sherels and linebackers Chad Greenway and Eric Kendricks as other no-brainers.
+    </Paragraph>
 
-    <Paragraph
-      >Four of the consensus picks are current Vikings players — Jefferson,
-      Smith, Brian O’Neill and Byron Murphy Jr.</Paragraph
-    >
+    <Paragraph>
+    Four of the consensus picks are current Vikings players: Jefferson, Smith, Brian O’Neill and Byron Murphy Jr. 
+    </Paragraph>
 
-    <Paragraph
-      >The three selectors disagreed on very little. Craig liked second-year
-      kicker Will Reichard by a nose — and a very strong toe — over Ryan
-      Longwell, the pick of the other two. And Goessling and Craig like current
-      long-snapper Andrew DePaola over Krammer’s choice, Cullen Loeffler
-      (2004-14).</Paragraph
-    >
+    <Paragraph>
+    The three selectors disagreed on very little. Craig liked second-year kicker Will Reichard by a nose — and a very strong toe — over Ryan Longwell, the pick of the other two. Danielle Hunter beat out Everson Griffen at one of the edge spots; Pat Williams was chosen over Linval Joseph at defensive tackle; and Corey Chavous got the nod over Anthony Harris at strong safety. Joe Berger received a vote at right guard, not enough to displace Dave Dixon. And Goessling and Craig liked current long snapper Andrew DePaola over Krammer’s choice, Cullen Loeffler.
+    </Paragraph>
 
-    <Paragraph
-      >But at two key positions, they disagreed quite a bit: Goessling, Krammer
-      and Craig chose three different coaches and three different quarterbacks,
-      speaking volumes as to why the first 25 years of this century have been
-      consistently inconsistent. In those cases, we had readers vote to break
-      the tie.</Paragraph
-    >
+    <Paragraph>
+    But at two key positions, they disagreed quite a bit: Goessling, Krammer and Craig chose three different coaches and three different quarterbacks, speaking volumes as to why the first 25 years of this century have been consistently inconsistent. In those cases, <a href="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811" target="_blank" rel="noreferrer" title="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811" data-mrf-link="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811" cmp-ltrk="Article Links" cmp-ltrk-idx="0" mrfobservableid="7af1131b-0213-4970-a9e4-14b0b3c66adb">we had readers vote to break the tie</a>. 
+    </Paragraph>
 
-    <Paragraph
-      >The Vikings missed the playoffs more times (15) than they made it (10)
-      and appeared in back-to-back postseasons only once (2008-09). They played
-      in 15 playoff games, going 5-10 with eight different quarterbacks – Daunte
-      Culpepper, Tarvaris Jackson, Brett Favre, Joe Webb, Teddy Bridgewater,
-      Case Keenum, Kirk Cousins and Sam Darnold – and six different coaches –
-      Denny Green, Mike Tice, Brad Childress, Leslie Frazier, Mike Zimmer and
-      Kevin O’Connell.</Paragraph
-    >
+    <Paragraph>
+    Here’s our Vikings All Quarter Century team. Like we said, let the second-guessing and back-biting begin! 
+    </Paragraph>
 
-    <Paragraph
-      >So which QB and coach would you pick to lead your Vikings All-Quarter
-      Century team? Goessling went with Daunte Culpepper and Mike Zimmer.
-      Krammer likes Kirk Cousins and current coach Kevin O’Connell. And Craig
-      couldn’t help but invite a gunslinging Cheesehead to the party by
-      reuniting Brett Favre with Brad Childress.</Paragraph
-    >
-
-    <Paragraph
-      >Like we said, let the second-guessing and back-biting begin!</Paragraph
-    >
+    <Paragraph>
+    Goessling, Krammer and Craig debated their choices with Emily Leiker on the “Access Vikings” podcast. Watch it here. 
+    </Paragraph>
   </GridRow>
 
   <GridRow additionalClasses="justify-self-center text-center w-[80%] md:w-[60%] mx-auto pt-8 pb-8">
@@ -216,10 +175,10 @@
   </GridRow>
 </Grid>
 <Grid additionalClasses={'gap-y-0'}>
-  <GridRow variant={'inline'} additionalClasses={'gap-y-5 pt-8'}>
+  <GridRow variant={'inline'} additionalClasses={'gap-y-5 pt-2'}>
     <div class="credits text-center mb-8 rt-Box font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU mt-[6px] px-4">
       <p class="pb-[3px]"><span class="font-[Graphik-semibold]">Design and development:</span> Joe Rull and Jamie Hutt</p>
-      <p><span class="font-[Graphik-semibold]">Editing:</span> Naila-Jean Meyers and Kenneth Chia</p>
+      <p><span class="font-[Graphik-semibold]">Editing:</span> Naila-Jean Meyers, Kenneth Chia and Matt Tustison</p>
 </div>
   </GridRow>
 </Grid>

@@ -23,7 +23,6 @@
   }
 
   // sticky card nav support
-
   import { onMount } from 'svelte';
 
   let headerOffset = $state(0);
@@ -40,46 +39,80 @@
 
     if (!header || !cardNav || !sentinel) return;
 
-    // 1) Keep header offset in sync even when the header shrinks after scroll
-    const ro = new ResizeObserver(() => {
-      setHeaderOffset(header.offsetHeight);
-      // When header height changes, we need to rebuild the IO with a new rootMargin.
-      rebuildIO();
-    });
-
-    ro.observe(header);
-
-    // Initial measure
-    setHeaderOffset(header.offsetHeight);
-
-    // 2) Toggle .stuck only when crossing the navbar-bottom line
     let io;
+    let rafId = 0;
+    let lastMeasured = -1;
 
-    const rebuildIO = () => {
+    const rebuildIO = (px) => {
       if (io) io.disconnect();
 
       io = new IntersectionObserver(
         ([entry]) => {
-          // When the sentinel is no longer visible (above the threshold),
-          // the cardNav has reached/passed the sticky line.
           cardNav.classList.toggle('stuck', !entry.isIntersecting);
         },
         {
           root: null,
           threshold: 0,
-          // shift the "top" boundary down by the header height
-          rootMargin: `-${headerOffset}px 0px 0px 0px`,
+          rootMargin: `-${px}px 0px 0px 0px`,
         },
       );
 
       io.observe(sentinel);
     };
 
-    rebuildIO();
+    const measureHeader = () => {
+      // rAF throttle to avoid running on every scroll tick
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = 0;
+
+        // More reliable than offsetHeight when transforms/animations are involved
+        const h = Math.round(header.getBoundingClientRect().height);
+
+        if (h !== lastMeasured) {
+          lastMeasured = h;
+          setHeaderOffset(h);
+          rebuildIO(h);
+        }
+      });
+    };
+
+    // 1) Initial measure (pre-scroll size)
+    measureHeader();
+
+    // 2) ResizeObserver (works great on most browsers)
+    const ro = new ResizeObserver(measureHeader);
+    ro.observe(header);
+
+    // 3) iPad/Safari: header shrink often happens only once scroll begins,
+    // and RO may not fire depending on how the shrink is implemented.
+    window.addEventListener('scroll', measureHeader, { passive: true });
+
+    // 4) iOS Safari bonus: visualViewport changes can affect layout/measurements
+    const vv = window.visualViewport;
+    if (vv) {
+      vv.addEventListener('resize', measureHeader);
+      vv.addEventListener('scroll', measureHeader);
+    }
+
+    // 5) If your header shrink is class-driven (e.g., body/header gets a class),
+    // MutationObserver catches it immediately.
+    const mo = new MutationObserver(measureHeader);
+    mo.observe(header, {
+      attributes: true,
+      attributeFilter: ['class', 'style'],
+    });
 
     return () => {
       ro.disconnect();
+      mo.disconnect();
       if (io) io.disconnect();
+      window.removeEventListener('scroll', measureHeader);
+      if (vv) {
+        vv.removeEventListener('resize', measureHeader);
+        vv.removeEventListener('scroll', measureHeader);
+      }
+      if (rafId) cancelAnimationFrame(rafId);
     };
   });
 </script>

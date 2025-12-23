@@ -70,13 +70,14 @@ Renders a visual replica of the Immersive Template hero.
       <img
         class=""
         alt="Viking Quarter Century Team hero"
-        src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/ALLQCmobilehero.jpg?w=700"
+        src="https://ststatic.stimg.co/news/projects/all/2025-VIKES-ALLQC/img/ALLQCmobilehero.jpg?w=1024"
       />
     </div>
     <p
       class="text-center mb-8 rt-Box font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU mt-[6px] px-4"
     >
-      Images provided by the Associated Press, photo illustration by Joe Rull
+      Images by The Minnesota Star Tribune staff photographers, photo
+      illustration by Joe Rull
     </p>
 
     <!-- end hero image -->

@@ -156,7 +156,7 @@
 
     <div id="cardNavSentinel" aria-hidden="true"></div>
 
-    <nav id="cardNav" style={`top: var(--header-offset, 0px);`} class="cardNav toggler px-4 py-4 text-[1rem] leading-[100%] md:text-[1.15em] text-center mx-auto font-[Graphik-regular] letterspacing-[2px] sticky z-20 bg-[white]">
+    <nav id="cardNav" style={`top: var(--header-offset, 0px);`} class="cardNav toggler px-4 py-4 text-[.8rem] leading-[100%] md:text-[1em] text-center mx-auto font-[Graphik-Semibold] tracking-[1.5px] sticky z-20 bg-[white]">
       {#each groups as g}
         <button
           type="button"

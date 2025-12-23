@@ -89,7 +89,7 @@
                 {#if item.position != "Flex"}
                   <div class="posinfo text-center text-[.85rem]">
                     <span class="name font-[Graphik-semibold] text-[#4f2683]">{item.position}</span>
-                    <span class="jersey_num">{#if !item.position == "COACH"}#{/if}{item.jersey_number} &#8226; </span>
+                    <span class="jersey_num">{#if item.position != "COACH"}#{/if}{item.jersey_number} &#8226; </span>
                     <span class="years">{item.years}</span>
                   </div>
                 {/if}
@@ -101,7 +101,10 @@
                         &mdash; <span class="font-[Graphik-semibold]">{item.blurb_author}</span>
                       {/if}
                     </div>
-                    
+
+
+
+
                     <div class="other_voters pt-2 pb-4">
                       <h3>Vote results:</h3>
                       {#if !item.other_votes}

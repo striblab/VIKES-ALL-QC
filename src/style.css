@@ -54,7 +54,7 @@ p.font-editorial-body-reg-02.text-text-primary a,
     font-family:'Graphik-semibold';
     padding-bottom: 6px;
 }
-.card-Flex h3 {
+.card-Flex h3.flex-player {
     font-size: 1rem;
     padding-top:6px;
 }

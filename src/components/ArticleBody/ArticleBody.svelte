@@ -224,7 +224,7 @@
     </Paragraph>
 
     <Paragraph>
-      Here’s our Vikings All Quarter Century team. Like we said, let the
+      Here’s our Vikings All-Quarter Century team. Like we said, let the
       second-guessing and back-biting begin!
     </Paragraph>
   </GridRow>

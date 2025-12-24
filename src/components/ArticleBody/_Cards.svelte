@@ -93,7 +93,7 @@
                     <span class="years">{item.years}</span>
                   </div>
                 {/if}
-                <div class="blurb relative z-10 font-[Graphik-regular] text-[.9rem] overflow-scroll overflow-x-hidden h-full max-h-[68%] mt-[17%] mr-[3.75%] ml-[3.75%]">
+                <div class="blurb relative z-10 font-[Graphik-regular] text-[.9rem] overflow-auto overflow-x-hidden h-full max-h-[68%] mt-[17%] mr-[3.75%] ml-[3.75%]">
                   <div class="blurb-text pl-4 pr-4 leading-[1.15rem] -tracking-[.25px]">
                     {@html item.blurb}
                     <div class="attrib text-right mt-[.5rem]">
@@ -101,10 +101,6 @@
                         &mdash; <span class="font-[Graphik-semibold]">{item.blurb_author}</span>
                       {/if}
                     </div>
-
-
-
-
                     <div class="other_voters pt-2 pb-4">
                       <h3>Vote results:</h3>
                       {#if !item.other_votes}

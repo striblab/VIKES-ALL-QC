@@ -211,7 +211,7 @@
       and Craig chose three different coaches and three different quarterbacks,
       speaking volumes as to why the first 25 years of this century have been
       consistently inconsistent. In those cases, <a
-        href="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811"
+        href="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811?item=results"
         target="_blank"
         rel="noreferrer"
         title="https://www.startribune.com/minnesota-vikings-all-quarter-century-team-qb-coach-poll/601543811"

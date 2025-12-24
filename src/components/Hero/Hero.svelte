@@ -76,8 +76,7 @@ Renders a visual replica of the Immersive Template hero.
     <p
       class="text-center mb-8 rt-Box font-utility-meta-reg-02 text-text-secondary col-span-full ArticleHero_leadart-standard-credit__Y1_wU mt-[6px] px-4"
     >
-      Images by The Minnesota Star Tribune staff photographers, photo
-      illustration by Joe Rull
+      Photos by the Minnesota Star Tribune; photo illustration by Joe Rull
     </p>
 
     <!-- end hero image -->
@@ -109,7 +108,7 @@ Renders a visual replica of the Immersive Template hero.
         class="font-[publico-headline-black] px-4 text-text-primary text-[1rem] xs:text-[1.8rem] md:text-[3rem] lg:text-[4rem]"
       >
         Meet the Minnesota <span class="whitespace-nowrap">Star Tribune’s</span>
-        Vikings <span class="whitespace-nowrap">All-Quarter-Century</span> Team
+        Vikings <span class="whitespace-nowrap">All-Quarter Century</span> Team
       </h1>
     </div>
 
@@ -121,7 +120,7 @@ Renders a visual replica of the Immersive Template hero.
       <h2
         class="mx-auto font-editorial-non-news-heading-05 text-[.9rem] xs:text-[1.2rem] xs:max-w-[375px] md:text-[1.5rem] md:max-w-[475px] lg:text-[1.75rem] lg:max-w-[800px] text-text-primary"
       >
-        Three longtime Vikings reporters picked 27 players and a head coach who
+        Three longtime Vikings reporters picked 29 players and a head coach who
         were the best at their positions from 2000 to 2025.
       </h2>
       <div class="mt-4">

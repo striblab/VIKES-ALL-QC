@@ -93,7 +93,7 @@
                     <span class="years">{item.years}</span>
                   </div>
                 {/if}
-                <div class="blurb relative z-10 font-[Graphik-regular] text-[.9rem] overflow-scroll overflow-x-hidden h-full max-h-[68%] mt-[17%] mr-[3.75%] ml-[3.75%]">
+                <div class="blurb relative z-10 font-[Graphik-regular] text-[.9rem] overflow-auto overflow-x-hidden h-full max-h-[68%] mt-[17%] mr-[3.75%] ml-[3.75%]">
                   <div class="blurb-text pl-4 pr-4 leading-[1.15rem] -tracking-[.25px]">
                     {@html item.blurb}
                     <div class="attrib text-right mt-[.5rem]">
@@ -114,7 +114,7 @@
                 </div>
               </div>
             </div>
-            <div class="fadedScroller_fade z-20 h-[1.5rem] w-full absolute bottom-[6.2773%] pr-[8%] pl-[8%]">
+            <div class="fadedScroller_fade z-20 h-[1.5rem] w-full absolute bottom-[6%] pr-[8%] pl-[8%]">
               <div class="h-full bg-[linear-gradient(to_bottom,rgba(251,251,251,0)_0%,rgba(255,251,238,1)_100%)]"></div>
             </div>
           </div>
